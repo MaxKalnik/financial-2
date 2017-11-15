@@ -64,14 +64,25 @@ gulp.task('stylus', function () {
 });
 
 
+// gulp.task('js', function () {
+//     return gulp.src([
+//             dev_path.js + '**/*'
+//         ])
+//         .on('error', console.log)
+//         .pipe(concat('script.js'))
+//         .pipe(jsmin())
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(gulp.dest(build_path.js))
+//         .pipe(browsersync.reload({
+//             stream: true
+//         }));
+// });
+
 gulp.task('js', function () {
     return gulp.src([
             dev_path.js + '**/*'
         ])
         .on('error', console.log)
-        .pipe(concat('script.js'))
-        .pipe(jsmin())
-        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(build_path.js))
         .pipe(browsersync.reload({
             stream: true
